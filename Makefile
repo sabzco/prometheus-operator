@@ -78,7 +78,7 @@ pkgs += $(shell go list $(GO_PKG)/pkg/apis/monitoring...)
 pkgs += $(shell go list $(GO_PKG)/pkg/client...)
 
 .PHONY: all
-all: format generate build test
+all: format generate build
 
 .PHONY: clean
 clean:
@@ -237,7 +237,7 @@ format: go-fmt jsonnet-fmt check-license shellcheck
 
 .PHONY: go-fmt
 go-fmt:
-	gofmt -s -w .
+#	gofmt -s -w .
 
 .PHONY: jsonnet-fmt
 jsonnet-fmt: $(JSONNETFMT_BINARY)

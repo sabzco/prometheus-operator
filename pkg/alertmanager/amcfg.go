@@ -103,7 +103,7 @@ func (cg *configGenerator) generateConfig(
 			continue
 		}
 
-		subRoutes = append(subRoutes, convertRoute(amConfigs[amConfigIdentifier].Spec.Route, crKey, true))
+		subRoutes = append(subRoutes, convertRoute(amConfigs[amConfigIdentifier].Spec.Route, crKey, false))
 
 		for _, receiver := range amConfigs[amConfigIdentifier].Spec.Receivers {
 			receivers, err := cg.convertReceiver(ctx, &receiver, crKey)
